@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Registration Form</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Event Registration Form</h1>
+        <form action="/submit_registration" method="post" enctype="multipart/form-data">
+           <fieldset><legend>USER REGISTRATION</legend><br><br>
+           
+                        <!-- Personal Details -->
+                        <label for="fullName">Full Name:</label>
+                        <input type="text" id="fullName" name="fullName" placeholder="Enter your full name" required>
+            <br><br>
+                        <label for="email">Email Address:</label>
+                        <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+            <br><br>
+                        <label for="phone">Phone Number:</label>
+                        <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" pattern="[0-9]{10}" required>
+            <br><br>
+                        <label for="dob">Date of Birth:</label>
+                        <input type="date" id="dob" name="dob" required>
+            <br><br>
+                        <!-- Accommodation Type -->
+                        <div class="radio-group">
+                            <label>Accommodation Type:</label>
+                            <input type="radio" id="dayScholar" name="accommodation" value="Day Scholar" required>
+                            <label for="dayScholar">Day Scholar</label>
+                            
+                            <input type="radio" id="hosteller" name="accommodation" value="Hosteller">
+                            <label for="hosteller">Hosteller</label>
+                        </div>
+            <br><br>
+                        <!-- Pass Collection -->
+                        <label for="passUpload">Upload ID Proof for Pass Collection:</label> <br><br>
+                        <input type="file" id="passUpload" name="passUpload" class="file-input" accept="image/*,.pdf" required>
+            <br><br>
+                        <!-- Event Preferences -->
+                        <label for="event">Choose Event:</label><br><br>
+                        <select id="event" name="event" required><br><br>
+                            <option value="">-- Select an Event --</option><br><br>
+                            <option value="Tech Talk">Tech Talk</option><br><br>
+                            <option value="Workshop">Workshop</option>
+                            <option value="Coding Contest">Coding Contest</option><br><br>
+                            <option value="Cultural Fest">Cultural Fest</option>
+                        </select>
+            <br><br>
+                        <div class="checkbox-group">
+                            <label>Food Preferences:</label>
+                            <input type="checkbox" id="veg" name="foodPreference" value="Vegetarian">
+                            <label for="veg">Vegetarian</label>
+            
+                            <input type="checkbox" id="nonVeg" name="foodPreference" value="Non-Vegetarian">
+                            <label for="nonVeg">Non-Vegetarian</label>
+            
+                            <input type="checkbox" id="vegan" name="foodPreference" value="Vegan">
+                            <label for="vegan">Vegan</label>
+                        </div>
+            <br><br>
+                        <!-- Feedback -->
+                        <label for="feedback">Feedback or Suggestions:</label><br><br>
+                        <textarea id="feedback" name="feedback" placeholder="Enter any suggestions or comments" rows="4"></textarea>
+            <br><br>
+                        <!-- Submit Button -->
+                        <button type="submit" class="button">Register</button>
+                    </form>
+                </div>
+            </body>
+            </html>
+            
+        </fieldset>
+        </form>
+    </div>
+</body>
+</html>
