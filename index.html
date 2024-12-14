@@ -8,6 +8,20 @@
 <body>
     <div class="container">
         <h1>Hackathon 3.0 Registration Form</h1>
+        <p><strong>Event Details:</strong></p>
+        <ul>
+            <li><strong>Event Name:</strong> Hackathon 3.0</li>
+            <li><strong>Date:</strong> December 28, 2024</li>
+            <li><strong>Time:</strong> 9:00 AM - 6:00 PM</li>
+            <li><strong>Venue:</strong> AITAM College, Tekkali</li>
+        </ul>
+        <p>
+            Join us for Hackathon 3.0, where participants can showcase their technical skills, 
+            solve real-world problems, and compete for exciting prizes. Open to students of all years and skill levels.
+        </p>
+        <p><strong>Note:</strong> Teams can have up to 4 members. Individual registrations are also allowed.</p>
+        <hr>
+
         <form action="/submit_registration" method="post" enctype="multipart/form-data">
             <!-- User Details Section -->
             <fieldset>
@@ -24,39 +38,49 @@
                 <label for="dob">Date of Birth:</label><br>
                 <input type="date" id="dob" name="dob" required><br><br>
 
-                <label>Accommodation Type:</label><br>
-                <input type="radio" id="dayScholar" name="accommodation" value="Day Scholar" required>
-                <label for="dayScholar">Day Scholar</label><br>
-                <input type="radio" id="hosteller" name="accommodation" value="Hosteller">
-                <label for="hosteller">Hosteller</label><br><br>
-
-                <label for="passUpload">Upload ID Proof for Pass Collection:</label><br>
-                <input type="file" id="passUpload" name="passUpload" accept="image/*,.pdf" required><br><br>
+                <label for="teamName">Team Name (Optional):</label><br>
+                <input type="text" id="teamName" name="teamName" placeholder="Enter your team name (if applicable)"><br><br>
             </fieldset>
             <br>
 
             <!-- Event Preferences Section -->
             <fieldset>
                 <legend>Event Preferences</legend>
-                <label for="event">Choose Event:</label><br>
-                <select id="event" name="event" required>
-                    <option value="">-- Select an Event --</option>
-                    <option value="Tech Talk">Tech Talk</option>
-                    <option value="Workshop">Workshop</option>
-                    <option value="Coding Contest">Coding Contest</option>
-                    <option value="Cultural Fest">Cultural Fest</option>
+                <label for="track">Choose Your Track:</label><br>
+                <select id="track" name="track" required>
+                    <option value="">-- Select a Track --</option>
+                    <option value="Web Development">Web Development</option>
+                    <option value="Data Science">Data Science</option>
+                    <option value="AI & ML">AI & ML</option>
+                    <option value="IoT & Hardware">IoT & Hardware</option>
                 </select><br><br>
 
-                <label>Food Preferences:</label><br>
-                <input type="checkbox" id="veg" name="foodPreference" value="Vegetarian">
-                <label for="veg">Vegetarian</label><br>
-                <input type="checkbox" id="nonVeg" name="foodPreference" value="Non-Vegetarian">
-                <label for="nonVeg">Non-Vegetarian</label><br>
-                <input type="checkbox" id="vegan" name="foodPreference" value="Vegan">
-                <label for="vegan">Vegan</label><br><br>
+                <label for="experience">Experience Level:</label><br>
+                <select id="experience" name="experience" required>
+                    <option value="">-- Select Your Experience --</option>
+                    <option value="Beginner">Beginner</option>
+                    <option value="Intermediate">Intermediate</option>
+                    <option value="Expert">Expert</option>
+                </select><br><br>
 
                 <label for="feedback">Feedback or Suggestions:</label><br>
-                <textarea id="feedback" name="feedback" placeholder="Enter any suggestions or comments" rows="4"></textarea><br><br>
+                <textarea id="feedback" name="feedback" placeholder="Share your expectations or suggestions" rows="4"></textarea><br><br>
+            </fieldset>
+            <br>
+
+            <!-- Event Rules Section -->
+            <fieldset>
+                <legend>Event Rules</legend>
+                <ol>
+                    <li>Participants must bring their laptops and required peripherals.</li>
+                    <li>Internet access will be provided for development purposes.</li>
+                    <li>Plagiarism will lead to immediate disqualification.</li>
+                    <li>Teams can have a maximum of 4 members.</li>
+                    <li>Individual participants are allowed to compete.</li>
+                </ol>
+                <p>
+                    By registering, you agree to abide by all rules and regulations of Hackathon 3.0.
+                </p>
             </fieldset>
             <br>
 
@@ -71,8 +95,8 @@
                 <label for="creditCard">Credit Card</label><br>
                 <input type="radio" id="debitCard" name="paymentMethod" value="Debit Card">
                 <label for="debitCard">Debit Card</label><br>
-                <input type="radio" id="paypal" name="paymentMethod" value="PayPal">
-                <label for="paypal">PayPal</label><br><br>
+                <input type="radio" id="upi" name="paymentMethod" value="UPI">
+                <label for="upi">UPI</label><br><br>
 
                 <label for="paymentScreenshot">Upload Payment Screenshot (Max 50MB):</label><br>
                 <input type="file" id="paymentScreenshot" name="paymentScreenshot" accept="image/*" required><br><br>
