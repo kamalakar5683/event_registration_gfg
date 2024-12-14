@@ -15,17 +15,26 @@
             <li><strong>Time:</strong> 9:00 AM - 6:00 PM</li>
             <li><strong>Venue:</strong> AITAM College, Tekkali</li>
         </ul>
-        <p>
-            Join us for Hackathon 3.0, where participants can showcase their technical skills, 
-            solve real-world problems, and compete for exciting prizes. Open to students of all years and skill levels.
-        </p>
-        <p><strong>Note:</strong> Teams can have up to 4 members. Individual registrations are also allowed.</p>
+        <p><strong>Note:</strong> Additional provisions and schedules are provided based on whether you are a Day Scholar or a Hosteller.</p>
+        
+        <!-- Event Rules Section -->
+        <h2>Event Rules</h2>
+        <ul>
+            <li>Participants must arrive at the venue by 9:00 AM for registration.</li>
+            <li>Each team must have a minimum of 2 and a maximum of 4 members.</li>
+            <li>No plagiarism is allowed. Participants found copying code or ideas will be disqualified.</li>
+            <li>Participants must bring their own laptops and required tools for the hackathon.</li>
+            <li>Participants should follow the guidelines set by the event organizers for the safety and smooth operation of the event.</li>
+            <li>Participants should respect the event's schedule and maintain decorum at all times.</li>
+            <li>In case of any disputes, the decision of the event organizers will be final.</li>
+        </ul>
         <hr>
 
         <form action="/submit_registration" method="post" enctype="multipart/form-data">
             <!-- User Details Section -->
             <fieldset>
                 <legend>User Details</legend>
+
                 <label for="fullName">Full Name:</label><br>
                 <input type="text" id="fullName" name="fullName" placeholder="Enter your full name" required><br><br>
 
@@ -38,68 +47,41 @@
                 <label for="dob">Date of Birth:</label><br>
                 <input type="date" id="dob" name="dob" required><br><br>
 
-                <label for="teamName">Team Name (Optional):</label><br>
-                <input type="text" id="teamName" name="teamName" placeholder="Enter your team name (if applicable)"><br><br>
+                <label>Accommodation Type:</label><br>
+                <input type="radio" id="dayScholar" name="accommodation" value="Day Scholar" required>
+                <label for="dayScholar">Day Scholar</label><br>
+                <input type="radio" id="hosteller" name="accommodation" value="Hosteller">
+                <label for="hosteller">Hosteller</label><br><br>
             </fieldset>
             <br>
 
-            <!-- Event Preferences Section -->
+            <!-- Day Scholar Section -->
             <fieldset>
-                <legend>Event Preferences</legend>
-                <label for="track">Choose Your Track:</label><br>
-                <select id="track" name="track" required>
-                    <option value="">-- Select a Track --</option>
-                    <option value="Web Development">Web Development</option>
-                    <option value="Data Science">Data Science</option>
-                    <option value="AI & ML">AI & ML</option>
-                    <option value="IoT & Hardware">IoT & Hardware</option>
+                <legend>Day Scholar Details</legend>
+                <label for="commute">Mode of Commute:</label><br>
+                <select id="commute" name="commute">
+                    <option value="">-- Select Your Mode of Commute --</option>
+                    <option value="Bus">Bus</option>
+                    <option value="Bike">Bike</option>
+                    <option value="Car">Car</option>
+                    <option value="Public Transport">Public Transport</option>
                 </select><br><br>
 
-                <label for="experience">Experience Level:</label><br>
-                <select id="experience" name="experience" required>
-                    <option value="">-- Select Your Experience --</option>
-                    <option value="Beginner">Beginner</option>
-                    <option value="Intermediate">Intermediate</option>
-                    <option value="Expert">Expert</option>
-                </select><br><br>
-
-                <label for="feedback">Feedback or Suggestions:</label><br>
-                <textarea id="feedback" name="feedback" placeholder="Share your expectations or suggestions" rows="4"></textarea><br><br>
+                <label for="departureTime">Preferred Departure Time:</label><br>
+                <input type="time" id="departureTime" name="departureTime"><br><br>
             </fieldset>
             <br>
 
-            <!-- Event Rules Section -->
+            <!-- Hosteller Section -->
             <fieldset>
-                <legend>Event Rules</legend>
-                <ol>
-                    <li>Participants must bring their laptops and required peripherals.</li>
-                    <li>Internet access will be provided for development purposes.</li>
-                    <li>Plagiarism will lead to immediate disqualification.</li>
-                    <li>Teams can have a maximum of 4 members.</li>
-                    <li>Individual participants are allowed to compete.</li>
-                </ol>
-                <p>
-                    By registering, you agree to abide by all rules and regulations of Hackathon 3.0.
-                </p>
-            </fieldset>
-            <br>
+                <legend>Hosteller Details</legend>
+                <label for="roomNumber">Room Number:</label><br>
+                <input type="text" id="roomNumber" name="roomNumber" placeholder="Enter your room number"><br><br>
 
-            <!-- Payment Information Section -->
-            <fieldset>
-                <legend>Payment Information</legend>
-                <label for="tickets">Number of Tickets:</label><br>
-                <input type="number" id="tickets" name="tickets" placeholder="Enter the number of tickets" min="1" required><br><br>
+                <label for="wardenApproval">Upload Warden Approval Letter:</label><br>
+                <input type="file" id="wardenApproval" name="wardenApproval" accept="image/*,.pdf"><br><br>
 
-                <label>Payment Method:</label><br>
-                <input type="radio" id="creditCard" name="paymentMethod" value="Credit Card" required>
-                <label for="creditCard">Credit Card</label><br>
-                <input type="radio" id="debitCard" name="paymentMethod" value="Debit Card">
-                <label for="debitCard">Debit Card</label><br>
-                <input type="radio" id="upi" name="paymentMethod" value="UPI">
-                <label for="upi">UPI</label><br><br>
-
-                <label for="paymentScreenshot">Upload Payment Screenshot (Max 50MB):</label><br>
-                <input type="file" id="paymentScreenshot" name="paymentScreenshot" accept="image/*" required><br><br>
+                <p><strong>Note:</strong> Hostellers must adhere to the hostel curfew timings.</p>
             </fieldset>
             <br>
 
